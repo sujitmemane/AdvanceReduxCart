@@ -1,16 +1,16 @@
 import CartButton from "../Cart/CartButton";
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../store";
+import { uiSliceAction } from "../../store/ui-slice";
 import classes from "./MainHeader.module.css";
 
 const MainHeader = (props) => {
   const dispatch = useDispatch();
   const showCartToggler = () => {
-    dispatch(cartActions.showCartToggle());
+    dispatch(uiSliceAction.toggle());
   };
   return (
     <header className={classes.header}>
-      <h1>ReduxCart</h1>
+      <h1>Advance Redux Cart</h1>
       <nav>
         <ul>
           <li onClick={showCartToggler}>
